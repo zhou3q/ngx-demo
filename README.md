@@ -18,4 +18,9 @@ Some very useful and awesome components have been added.
   - [DataTable](https://www.primefaces.org/primeng/#/datatable)
   - [Charts](https://www.primefaces.org/primeng/#/chart)
 
+Some tips.
+
+- json file in *assets/json*
+- some js in *index.html*
+
 Please,waite! More is coming,thanks^_^
