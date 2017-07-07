@@ -23,4 +23,14 @@ Some tips.
 - json file in *assets/json*
 - some js in *index.html*
 
+## Installation
+
+Get this .git ,then install it via npm:
+
+- git clone https://github.com/3qfang/ngx-demo.git [demoname]
+- npm install
+- ng serve
+
+You can look at *http://localhost:4200*.
+
 Please,waite! More is coming,thanks^_^
