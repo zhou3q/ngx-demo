@@ -1,0 +1,24 @@
+{
+  "data": [{
+      "label": "节点3",
+      "data": "Node 3",
+      "expandedIcon": "fa-folder-open",
+      "collapsedIcon": "fa-folder",
+      "leaf": false
+    },
+    {
+      "label": "节点4",
+      "data": "Node 4",
+      "expandedIcon": "fa-folder-open",
+      "collapsedIcon": "fa-folder",
+      "leaf": false
+    },
+    {
+      "label": "节点5",
+      "data": "Node 5",
+      "expandedIcon": "fa-folder-open",
+      "collapsedIcon": "fa-folder",
+      "leaf": false
+    }
+  ]
+}
