@@ -17,6 +17,8 @@ Some very useful and awesome components have been added.
   - [Tree](https://www.primefaces.org/primeng/#/tree)
   - [DataTable](https://www.primefaces.org/primeng/#/datatable)
   - [Charts](https://www.primefaces.org/primeng/#/chart)
+  - [Steps](https://www.primefaces.org/primeng/#/steps)
+  - [Galleria](https://www.primefaces.org/primeng/#/galleria)
 
 Some tips.
 
