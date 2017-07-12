@@ -3,4 +3,10 @@
 
 /*bootstrap*/
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+/* primeng */
+
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+@import '../node_modules/primeng/resources/primeng.min.css';

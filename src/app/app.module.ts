@@ -15,6 +15,8 @@ import { TreeModule, TreeNode } from 'primeng/primeng';
 import { TreeDragDropService } from 'primeng/primeng'; // tree node drag
 import { ChartModule } from 'primeng/primeng';
 import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { StepsModule } from 'primeng/primeng';
+import { GalleriaModule } from 'primeng/primeng';
 // angular material
 import { MaterialModule } from '@angular/material';
 import { MdNativeDateModule } from '@angular/material';
@@ -38,6 +40,8 @@ import { AppService } from './app.service';
         ChartModule,
         DataTableModule,
         SharedModule,
+        StepsModule,
+        GalleriaModule,
         // material
         MaterialModule,
         MdNativeDateModule

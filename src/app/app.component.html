@@ -41,11 +41,14 @@
     <div class="ui-12 ui-lg-3">
       <p-chart type="bar" [data]="barData"></p-chart>
     </div>
-    <div class="ui-12 ui-lg-3">
+    <div class="ui-12 ui-lg-2">
       <p-chart type="pie" [data]="pieData"></p-chart>
     </div>
-    <div class="ui-12 ui-lg-3">
+    <div class="ui-12 ui-lg-2">
       <p-chart type="radar" [data]="radarData"></p-chart>
+    </div>
+    <div class="ui-12 ui-lg-2">
+      <p-chart type="doughnut" [data]="doudata"></p-chart>
     </div>
   </div>
   <!--table-->
@@ -72,6 +75,21 @@
         </p-column>
       </p-dataTable>
     </div>
+  </div>
+  <!-- step -->
+  <div class="ui-g ui-fluid">
+    <div class="ui-12 ui-lg-3">
+      <p-steps [model]="items"></p-steps>
+    </div>
+    <div class="ui-12 ui-lg-3">
+      <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+    </div>
+    <div class="ui-12 ui-lg-3">
+      <p-steps [model]="items" styleClass="steps-custom"></p-steps>
+    </div>
+  </div>
+  <div class="ui-g ui-fluid">
+    <p-galleria [images]="images" panelWidth="1000" panelHeight="800" [showCaption]="true"></p-galleria>
   </div>
 </div>
 <div class="material-div">
