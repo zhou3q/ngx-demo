@@ -105,6 +105,15 @@
       </p-treeTable>
       <p>Selected Nodes: <span *ngFor="let file of selNodes">{{file.data.name}} </span></p>
     </div>
+    <div class="ui-12 ui-lg-6">
+      <p-treeTable [value]="treeTableFiles2">
+        <p-header>user-defined data sturct</p-header>
+        <p-column field="Name" header="Name"></p-column>
+        <p-column field="ElevationSystem" header="ElevationSystem"></p-column>
+        <p-column field="IsBeGenerated" header="IsBeGenerated"></p-column>
+        <p-column field="Description" header="Description"></p-column>
+      </p-treeTable>
+    </div>
   </div>
   <p-contextMenu #cm [model]="treeItems"></p-contextMenu>
 </div>

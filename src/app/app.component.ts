@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
   private selNodes: TreeNode[];
   // tree-table context-menu
   private treeItems: MenuItem[];
+  private treeTableFiles2: any;
   constructor(private appservice: AppService) {
     this.lineData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -183,7 +184,25 @@ export class AppComponent implements OnInit {
       { label: 'View', icon: 'fa-search', command: (event) => this.viewNode(this.selNodes) },
       { label: 'Delete', icon: 'fa-close', command: (event) => this.deleteNode(this.selNodes) }
     ];
-
+    this.treeTableFiles2 = [
+      {
+        "data": {
+          "Name": "struct",
+          'Description': 'good',
+          "ElevationSystem": "",
+          "IsBeGenerated": ""
+        },
+        "children": [{
+          "data": {
+            "Name": "struct.ifc",
+            'Description': 'update',
+            "ElevationSystem": "0",
+            "IsBeGenerated": "true"
+          }
+        }
+        ]
+      }
+    ];
   }
   nodeSelect(event) {
     const selNode = event.node;
