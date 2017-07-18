@@ -91,6 +91,22 @@
   <div class="ui-g ui-fluid">
     <p-galleria [images]="images" panelWidth="1000" panelHeight="800" [showCaption]="true"></p-galleria>
   </div>
+  <!-- tree-table -->
+  <h2>TreeTable</h2>
+  <div class="ui-g ui-fluid">
+    <div class="ui-12 ui-lg-6">
+      <p-treeTable [value]="treeTableFiles" selectionMode="checkbox" [(selection)]="selNodes" (onNodeSelect)="ttnodeSelect($event)"
+        [contextMenu]="cm">
+        <p-header>tree-table demo</p-header>
+        <p-footer>tree-table demo</p-footer>
+        <p-column field="name" header="Name"></p-column>
+        <p-column field="size" header="Size"></p-column>
+        <p-column field="type" header="Type"></p-column>
+      </p-treeTable>
+      <p>Selected Nodes: <span *ngFor="let file of selNodes">{{file.data.name}} </span></p>
+    </div>
+  </div>
+  <p-contextMenu #cm [model]="treeItems"></p-contextMenu>
 </div>
 <div class="material-div">
   <h1>Angular Material</h1>

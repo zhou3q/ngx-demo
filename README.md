@@ -15,10 +15,12 @@ Some very useful and awesome components have been added.
 - PrimeNg
   - [Dialog](https://www.primefaces.org/primeng/#/dialog)
   - [Tree](https://www.primefaces.org/primeng/#/tree)
+  - [TreeTable](https://www.primefaces.org/primeng/#/treetable)
   - [DataTable](https://www.primefaces.org/primeng/#/datatable)
   - [Charts](https://www.primefaces.org/primeng/#/chart)
   - [Steps](https://www.primefaces.org/primeng/#/steps)
   - [Galleria](https://www.primefaces.org/primeng/#/galleria)
+  - [ContextMenu](https://www.primefaces.org/primeng/#/contextmenu)
 
 Some tips.
 

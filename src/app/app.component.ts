@@ -30,6 +30,11 @@ export class AppComponent implements OnInit {
   activeIndex: number = 1;
   // imgs
   images: any[];
+  // tree-table
+  private treeTableFiles: TreeNode[];
+  private selNodes: TreeNode[];
+  // tree-table context-menu
+  private treeItems: MenuItem[];
   constructor(private appservice: AppService) {
     this.lineData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -171,6 +176,13 @@ export class AppComponent implements OnInit {
     this.images.push({ source: 'http://bizhi.zhuoku.com/2012/12/05/jeep/jeep-wrangler-rubicon-10th-anniversary-edition-2013-widescreen-16.jpg', alt: 'Description for Image 1', title: 'Title 1' });
     this.images.push({ source: 'http://bizhi.zhuoku.com/2012/12/05/jeep/jeep-wrangler-rubicon-10th-anniversary-edition-2013-widescreen-16.jpg', alt: 'Description for Image 1', title: 'Title 1' });
     this.images.push({ source: 'http://www.blogcdn.com/www.autoblog.com/media/2012/11/001-2013-jeep-wrangler-rubicon-1353513760-opt.jpg', alt: 'Description for Image 1', title: 'Title 1' });
+    // tree-table
+    this.appservice.getFiles('../assets/json/filesystem.json').then(files => this.treeTableFiles = files);
+    // tree-table context-menu
+    this.treeItems = [
+      { label: 'View', icon: 'fa-search', command: (event) => this.viewNode(this.selNodes) },
+      { label: 'Delete', icon: 'fa-close', command: (event) => this.deleteNode(this.selNodes) }
+    ];
 
   }
   nodeSelect(event) {
@@ -190,5 +202,29 @@ export class AppComponent implements OnInit {
 
   showDialog() {
     this.display = true;
+  }
+  // tree-table
+  ttnodeSelect(event) {
+    const selNode = event.node;
+    console.log('selected：' + selNode.data.name);
+  }
+  // context-menu view
+  viewNode(nodes: TreeNode[]) {
+    if (nodes.length > 1) {
+      console.log('no context menu');
+    }
+    if (nodes.length == 1) {
+      console.log('node detail:' + nodes[0].data.name);
+    }
+
+  }
+
+  deleteNode(nodes: TreeNode[]) {
+    if (nodes.length > 1) {
+      console.log('no context menu');
+    }
+    if (nodes.length == 1) {
+      console.log('node detail:' + nodes[0].data.name);
+    }
   }
 }
