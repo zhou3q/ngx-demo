@@ -4,12 +4,18 @@ import { AppService } from './app.service';
 import { TreeNode } from 'primeng/primeng';
 import { Car } from './model/car';
 import { Message, MenuItem } from 'primeng/primeng';
+
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  data: any;
+  cropperSettings: CropperSettings;
 
   private files: TreeNode[];
   private selectedFiles: TreeNode[];
@@ -37,6 +43,16 @@ export class AppComponent implements OnInit {
   private treeItems: MenuItem[];
   private treeTableFiles2: any;
   constructor(private appservice: AppService) {
+    this.cropperSettings = new CropperSettings();
+    this.cropperSettings.width = 100;
+    this.cropperSettings.height = 100;
+    this.cropperSettings.croppedWidth = 100;
+    this.cropperSettings.croppedHeight = 100;
+    this.cropperSettings.canvasWidth = 400;
+    this.cropperSettings.canvasHeight = 300;
+
+    this.data = {};
+
     this.lineData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -246,4 +262,9 @@ export class AppComponent implements OnInit {
       console.log('node detail:' + nodes[0].data.name);
     }
   }
+
+  onSelectedIndexChange(event) {
+    console.log('tab:' + event);
+  }
+
 }

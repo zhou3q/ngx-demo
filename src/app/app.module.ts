@@ -26,12 +26,14 @@ import { MaterialModule } from '@angular/material';
 import { MdNativeDateModule } from '@angular/material';
 // service
 import { AppService } from './app.service';
+import { ImageCropperModule } from 'ng2-img-cropper';
 
 @NgModule({
     declarations: [
         AppComponent
     ],
     imports: [
+        ImageCropperModule,
         BrowserModule,
         FormsModule,
         HttpModule,

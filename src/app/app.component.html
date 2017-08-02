@@ -1,127 +1,135 @@
-<div class=" primeng-div">
-  <h1>PrimeNg</h1>
-  <p-dialog header="Godfather I" [(visible)]="display" modal="modal" width="300" [responsive]="true">
-    <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. His beloved
-      son Michael has just come home from the war, but does not intend to become part of his father's business. Through Michael's
-      life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-      kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the
-      good of the family.</p>
-    <p-footer>
-      <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
-      <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
-    </p-footer>
-  </p-dialog>
+<md-tab-group [selectedIndex]=2 (selectedIndexChange)="onSelectedIndexChange($event)">
+  <md-tab label="PrimeNg">
+    <p-dialog header="Godfather I" [(visible)]="display" modal="modal" width="300" [responsive]="true">
+      <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. His beloved
+        son Michael has just come home from the war, but does not intend to become part of his father's business. Through
+        Michael's life the nature of the family business becomes clear. The business of the family is just like the head
+        of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands
+        against the good of the family.</p>
+      <p-footer>
+        <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
+        <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+      </p-footer>
+    </p-dialog>
 
-  <button type="button" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
-  <p-tree [value]="files" selectionMode="checkbox" [(selection)]="selectedFiles" selectable="true" (onNodeSelect)="nodeSelect($event)"
-    (onNodeExpand)="loadNode($event)" draggableNodes="true" droppableNodes="true" layout="vertical" dragdropScope="a">
-  </p-tree>
-  <div>选中了节点: <span *ngFor="let file of selectedFiles">{{file.label}} </span></div>
-  <!--tree-->
-  <div class="ui-g ui-fluid">
-    <div class="ui-g-12 ui-md-3">
-      <h4>Files</h4>
-      <p-tree [value]="tree1" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
-    </div>
-
-    <div class="ui-g-12 ui-md-1" style="text-align:center">
-      <i class="fa fa-exchange" style="font-size:36px;margin-top: 28px;"></i>
-    </div>
-
-    <div class="ui-g-12 ui-md-3">
-      <h4>Server 1</h4>
-      <p-tree [value]="tree2" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
-    </div>
-  </div>
-  <!--chart-->
-  <div class="ui-g ui-fluid">
-    <div class="ui-12 ui-lg-3">
-      <p-chart type="line" [data]="lineData"></p-chart>
-    </div>
-    <div class="ui-12 ui-lg-3">
-      <p-chart type="bar" [data]="barData"></p-chart>
-    </div>
-    <div class="ui-12 ui-lg-2">
-      <p-chart type="pie" [data]="pieData"></p-chart>
-    </div>
-    <div class="ui-12 ui-lg-2">
-      <p-chart type="radar" [data]="radarData"></p-chart>
-    </div>
-    <div class="ui-12 ui-lg-2">
-      <p-chart type="doughnut" [data]="doudata"></p-chart>
-    </div>
-  </div>
-  <!--table-->
-  <div class="ui-g ui-fluid">
-    <div class="ui-12 ui-lg-3">
-      <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
-        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-        <input #gb type="text" pInputText size="50" placeholder="搜一哈">
+    <button type="button" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
+    <p-tree [value]="files" selectionMode="checkbox" [(selection)]="selectedFiles" selectable="true" (onNodeSelect)="nodeSelect($event)"
+      (onNodeExpand)="loadNode($event)" draggableNodes="true" droppableNodes="true" layout="vertical" dragdropScope="a">
+    </p-tree>
+    <div>选中了节点: <span *ngFor="let file of selectedFiles">{{file.label}} </span></div>
+    <!--tree-->
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <h4>Files</h4>
+        <p-tree [value]="tree1" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
       </div>
-      <p-dataTable [value]="cars" [editable]="true" #dt exportFilename="cars" resizableColumns="true" columnResizeMode="expand"
-        [globalFilter]="gb" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
-        <p-header>
-          <div class="ui-helper-clearfix">
-            <button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="float:right;width:85px;"></button>
-          </div>
-        </p-header>
-        <p-column field="vin" header="Vin"></p-column>
-        <p-column field="year" header="年份" [sortable]="true"></p-column>
-        <p-column field="brand" header="品牌"></p-column>
-        <p-column field="color" header="颜色" [editable]="true">
-          <ng-template let-col let-car="rowData" pTemplate="body">
-            <span [style.color]="car[col.field]">{{car[col.field]}}</span>
-          </ng-template>
-        </p-column>
-      </p-dataTable>
+
+      <div class="ui-g-12 ui-md-1" style="text-align:center">
+        <i class="fa fa-exchange" style="font-size:36px;margin-top: 28px;"></i>
+      </div>
+
+      <div class="ui-g-12 ui-md-3">
+        <h4>Server 1</h4>
+        <p-tree [value]="tree2" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
+      </div>
     </div>
-  </div>
-  <!-- step -->
-  <div class="ui-g ui-fluid">
-    <div class="ui-12 ui-lg-3">
-      <p-steps [model]="items"></p-steps>
+    <!--chart-->
+    <div class="ui-g ui-fluid">
+      <div class="ui-12 ui-lg-3">
+        <p-chart type="line" [data]="lineData"></p-chart>
+      </div>
+      <div class="ui-12 ui-lg-3">
+        <p-chart type="bar" [data]="barData"></p-chart>
+      </div>
+      <div class="ui-12 ui-lg-2">
+        <p-chart type="pie" [data]="pieData"></p-chart>
+      </div>
+      <div class="ui-12 ui-lg-2">
+        <p-chart type="radar" [data]="radarData"></p-chart>
+      </div>
+      <div class="ui-12 ui-lg-2">
+        <p-chart type="doughnut" [data]="doudata"></p-chart>
+      </div>
     </div>
-    <div class="ui-12 ui-lg-3">
-      <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+    <!--table-->
+    <div class="ui-g ui-fluid">
+      <div class="ui-12 ui-lg-3">
+        <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+          <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+          <input #gb type="text" pInputText size="50" placeholder="搜一哈">
+        </div>
+        <p-dataTable [value]="cars" [editable]="true" #dt exportFilename="cars" resizableColumns="true" columnResizeMode="expand"
+          [globalFilter]="gb" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+          <p-header>
+            <div class="ui-helper-clearfix">
+              <button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="float:right;width:85px;"></button>
+            </div>
+          </p-header>
+          <p-column field="vin" header="Vin"></p-column>
+          <p-column field="year" header="年份" [sortable]="true"></p-column>
+          <p-column field="brand" header="品牌"></p-column>
+          <p-column field="color" header="颜色" [editable]="true">
+            <ng-template let-col let-car="rowData" pTemplate="body">
+              <span [style.color]="car[col.field]">{{car[col.field]}}</span>
+            </ng-template>
+          </p-column>
+        </p-dataTable>
+      </div>
     </div>
-    <div class="ui-12 ui-lg-3">
-      <p-steps [model]="items" styleClass="steps-custom"></p-steps>
+    <!-- step -->
+    <div class="ui-g ui-fluid">
+      <div class="ui-12 ui-lg-3">
+        <p-steps [model]="items"></p-steps>
+      </div>
+      <div class="ui-12 ui-lg-3">
+        <p-steps [model]="items" [(activeIndex)]="activeIndex" [readonly]="false"></p-steps>
+      </div>
+      <div class="ui-12 ui-lg-3">
+        <p-steps [model]="items" styleClass="steps-custom"></p-steps>
+      </div>
     </div>
-  </div>
-  <div class="ui-g ui-fluid">
-    <p-galleria [images]="images" panelWidth="1000" panelHeight="800" [showCaption]="true"></p-galleria>
-  </div>
-  <!-- tree-table -->
-  <h2>TreeTable</h2>
-  <div class="ui-g ui-fluid">
-    <div class="ui-12 ui-lg-6">
-      <p-treeTable [value]="treeTableFiles" selectionMode="checkbox" [(selection)]="selNodes" (onNodeSelect)="ttnodeSelect($event)"
-        [contextMenu]="cm">
-        <p-header>tree-table demo</p-header>
-        <p-footer>tree-table demo</p-footer>
-        <p-column field="name" header="Name"></p-column>
-        <p-column field="size" header="Size"></p-column>
-        <p-column field="type" header="Type"></p-column>
-      </p-treeTable>
-      <p>Selected Nodes: <span *ngFor="let file of selNodes">{{file.data.name}} </span></p>
+    <div class="ui-g ui-fluid">
+      <p-galleria [images]="images" panelWidth="1000" panelHeight="800" [showCaption]="true"></p-galleria>
     </div>
-    <div class="ui-12 ui-lg-6">
-      <p-treeTable [value]="treeTableFiles2">
-        <p-header>user-defined data sturct</p-header>
-        <p-column field="Name" header="Name"></p-column>
-        <p-column field="ElevationSystem" header="ElevationSystem"></p-column>
-        <p-column field="IsBeGenerated" header="IsBeGenerated"></p-column>
-        <p-column field="Description" header="Description"></p-column>
-      </p-treeTable>
+    <!-- tree-table -->
+    <h2>TreeTable</h2>
+    <div class="ui-g ui-fluid">
+      <div class="ui-12 ui-lg-6">
+        <p-treeTable [value]="treeTableFiles" selectionMode="checkbox" [(selection)]="selNodes" (onNodeSelect)="ttnodeSelect($event)"
+          [contextMenu]="cm">
+          <p-header>tree-table demo</p-header>
+          <p-footer>tree-table demo</p-footer>
+          <p-column field="name" header="Name"></p-column>
+          <p-column field="size" header="Size"></p-column>
+          <p-column field="type" header="Type"></p-column>
+        </p-treeTable>
+        <p>Selected Nodes: <span *ngFor="let file of selNodes">{{file.data.name}} </span></p>
+      </div>
+      <div class="ui-12 ui-lg-6">
+        <p-treeTable [value]="treeTableFiles2">
+          <p-header>user-defined data sturct</p-header>
+          <p-column field="Name" header="Name"></p-column>
+          <p-column field="ElevationSystem" header="ElevationSystem"></p-column>
+          <p-column field="IsBeGenerated" header="IsBeGenerated"></p-column>
+          <p-column field="Description" header="Description"></p-column>
+        </p-treeTable>
+      </div>
     </div>
-  </div>
-  <p-contextMenu #cm [model]="treeItems"></p-contextMenu>
-</div>
-<div class="material-div">
-  <h1>Angular Material</h1>
-  <md-input-container>
-    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-    <button mdSuffix [mdDatepickerToggle]="picker"></button>
-  </md-input-container>
-  <md-datepicker #picker></md-datepicker>
-</div>
+    <p-contextMenu #cm [model]="treeItems"></p-contextMenu>
+  </md-tab>
+  <md-tab label="Material">
+    <md-input-container>
+      <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+    </md-input-container>
+  </md-tab>
+  <md-tab label="Third">
+    <h2>img upload</h2>
+    <div class="thirdComponent">
+      <div>
+        <img-cropper [image]="data" [settings]="cropperSettings"></img-cropper><br>
+        <img [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+      </div>
+    </div>
+  </md-tab>
+</md-tab-group>
