@@ -12,6 +12,7 @@ Some very useful and awesome components have been added.
 
 - Angular Material
   - [Datepicker](https://material.angular.io/components/datepicker/overview)
+  - [Tabs](https://material.angular.io/components/tabs/overview) -with selectedIndexChange event
 - PrimeNg
   - [Dialog](https://www.primefaces.org/primeng/#/dialog)
   - [Tree](https://www.primefaces.org/primeng/#/tree)
@@ -21,6 +22,8 @@ Some very useful and awesome components have been added.
   - [Steps](https://www.primefaces.org/primeng/#/steps)
   - [Galleria](https://www.primefaces.org/primeng/#/galleria)
   - [ContextMenu](https://www.primefaces.org/primeng/#/contextmenu)
+- Third libary
+  - [img-cropper](https://github.com/cstefanache/angular2-img-cropper)
 
 Some tips.
 
